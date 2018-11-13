@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlayerView));
             this.lblPlayerName = new System.Windows.Forms.Label();
             this.lblPLayerMoney = new System.Windows.Forms.Label();
             this.oPlayerIcon = new System.Windows.Forms.PictureBox();
@@ -54,9 +55,11 @@
             // 
             // oPlayerIcon
             // 
+            this.oPlayerIcon.Image = ((System.Drawing.Image)(resources.GetObject("oPlayerIcon.Image")));
             this.oPlayerIcon.Location = new System.Drawing.Point(172, 13);
             this.oPlayerIcon.Name = "oPlayerIcon";
             this.oPlayerIcon.Size = new System.Drawing.Size(100, 100);
+            this.oPlayerIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.oPlayerIcon.TabIndex = 2;
             this.oPlayerIcon.TabStop = false;
             // 

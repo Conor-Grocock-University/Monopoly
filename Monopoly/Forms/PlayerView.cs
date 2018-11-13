@@ -22,6 +22,7 @@ namespace Monopoly
         {
             this.player = player;
             lblPlayerName.Text = "Player " + player.playerNumber;
+            Console.WriteLine(player.PlayerImage.ToString());
             oPlayerIcon.Image = player.PlayerImage;
         }
     }

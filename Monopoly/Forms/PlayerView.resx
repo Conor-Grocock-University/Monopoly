@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="oPlayerIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAIAAAC3ytZVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMS4xYyqcSwAAA9xJREFUeF7tlkso
+        dmsYho2kHMqhlEMoQhjRHogJOUwYEcrEYUJIMkGIyc5hwEQSKcpEcoiQIjMRZeKQKDmmnJKSQ9++rXf1
+        5f7/6fr2v3fd1+h57vWu1fdc33rXWl4u8QPpIKSDkA5COgjpIKSDkA5COgjpIKSDkA5COgjpIKSDkA5C
+        OgjpIKSDkA5COgjpIKSDkA5COgjpIKSDkA5COgjpIKSDkA5COgjpIKSDkA5COgjpIKSDkA7CGR1PT0+H
+        h4d2Y3F+fn56emo3FmdnZ0dHR3bzX8UZHWNjY76+vnZjkZ2dHRwcbDcWJSUlxcXFdvMbX19fExMTdvPn
+        cEbH5eWll5fX/Py8aTEbWrCysmISAF+jo6N28xtra2tY//HxYfd/CMeeHWlpaZWVlaZeX1/HbFFRUbW1
+        tSbZ3t5GcnFxgXpnZ6e/v7+xsXFkZATikMBjaWkpFvT29g4ODlpnfDM1NVVfXz8wMPD29mYSWMOC4+Pj
+        5ubmvr4+EzqIYzra2tpCQkJM3dnZWVRUVFNTEx4ebpKenp7U1FQUi4uLGBu0trYmJCRkZmYihJ3CwkKE
+        OTk5OBEJ5s/IyIiLiysrK0OelJT0fRXrOmFhYdYFvHx8fEzoII7p2NzcxE88OTlBHRkZiafJwsICkuvr
+        ayTx8fHwZS10PT8/m2J4eBgLsNFQz87Oov78/DSHGhoa8vPzTX17e4tDQ0NDqKED9eTkpDnkOI7pAEFB
+        QRjj/f0dvxjvEcyGoqWlxRTwZa9zufb392dmZtrb25EfHBwg+UXHXxYY/m8LPz+/uro65EgSExPNGk/g
+        pA7c2BEREcvLy7g7TIK9EBsbiwSmTPL4+Jieno7JKyoqqqqq3Drm5uZ+6oiOjo6JiSkoKMDeKS8vr66u
+        np6eRg4d7o3jCZzUMT4+jpHy8vIwp0m6u7uR4KULUybp6Ohw/73YWW4dq6urqHFnmUNZWVl49Jj6J9CR
+        nJxsNx7ASR14TGAk4P6C2NraMglMmQSCAgMD7+/vUTc1NeGQ0bG7u4saTxPzKEHh7++/sbHxfY7LtbS0
+        tLe3hwI6UlJSTOgJnNQBsOExFT5J7d7lCg0NRXJ1dWXam5sbvGKQgJ86QG5uLlpvb+/X11e0XV1dAQEB
+        1kIvnGK+WaADrbXcIzh8aXxH3d3d2Y3Fy8vLLwl4eHiwKwYe3Z8YBrxW3Cr/BTxo+v+IdBDSQUgHIR2E
+        dBDSQUgHIR2EdBDSQUgHIR2EdBDSQUgHIR2EdBDSQUgHIR2EdBDSQUgHIR2EdBDSQUgHIR2EdBDSQUgH
+        IR2EdBDSQUgHIR2EdPzA5foHm7P/RJrBqcEAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

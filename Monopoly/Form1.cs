@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using Monopoly.Utility;
 
@@ -21,17 +23,21 @@ namespace Monopoly
             {
                 players[i] = new Player.Player();
                 players[i].playerNumber = i;
+                players[i].PlayerImage = File.getImageFromName("Players/" + i + ".png");
                 players[i].playerForm = new PlayerView();
                 players[i].playerForm.Show();
                 players[i].playerForm.setPlayer(players[i]);
                 players[i].OnBalanceChanged += players[i].playerForm.OnPlayerBalanceChanged;
                 players[i].OnBalanceChanged(1500);
-                players[i].PlayerImage = File.getImageFromName("Players/" + i + ".png");
 
                 PictureBox playerPictureBox = new PictureBox();
                 playerPictureBox.Image = players[i].PlayerImage;
-                playerPictureBox.Location = board.StartPoint;
+                Point startPoint = board.StartPoint;
+                startPoint.X += new Random().Next(0,90);
+                startPoint.Y += new Random().Next(0, 90);
+                playerPictureBox.Location = startPoint;
                 this.Controls.Add(playerPictureBox);
+                playerPictureBox.BringToFront();
             }
         }
     }
