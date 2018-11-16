@@ -32,6 +32,7 @@
             this.lblPlayerName = new System.Windows.Forms.Label();
             this.lblPLayerMoney = new System.Windows.Forms.Label();
             this.oPlayerIcon = new System.Windows.Forms.PictureBox();
+            this.btnEndTurn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.oPlayerIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,11 +64,23 @@
             this.oPlayerIcon.TabIndex = 2;
             this.oPlayerIcon.TabStop = false;
             // 
+            // btnEndTurn
+            // 
+            this.btnEndTurn.Location = new System.Drawing.Point(172, 120);
+            this.btnEndTurn.Name = "btnEndTurn";
+            this.btnEndTurn.Size = new System.Drawing.Size(100, 23);
+            this.btnEndTurn.TabIndex = 3;
+            this.btnEndTurn.Text = "End turn";
+            this.btnEndTurn.UseVisualStyleBackColor = true;
+            this.btnEndTurn.Click += new System.EventHandler(this.disablePanel);
+            // 
             // PlayerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ControlBox = false;
+            this.Controls.Add(this.btnEndTurn);
             this.Controls.Add(this.oPlayerIcon);
             this.Controls.Add(this.lblPLayerMoney);
             this.Controls.Add(this.lblPlayerName);
@@ -90,5 +103,6 @@
         }
 
         private System.Windows.Forms.PictureBox oPlayerIcon;
+        private System.Windows.Forms.Button btnEndTurn;
     }
 }

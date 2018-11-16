@@ -15,6 +15,8 @@ namespace Monopoly
         private Color color;
         private int price;
 
+        public Point WorldPosition;
+
         public int CardId
         {
             get { return cardId; }

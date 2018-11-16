@@ -52,9 +52,14 @@ namespace Monopoly
                     {
                         CreatePropertyTile(form, i, j);
                     }
+
+                    board[i, j].WorldPosition = getTileLocation(i, j);
+                    Console.WriteLine(board[i, j].Name +": "+ board[i, j].WorldPosition);
                 }
             }
         }
+
+        #region Create Tile Functions
 
         private void CreateCornerTile(Form form, int i, int j)
         {
@@ -145,9 +150,16 @@ namespace Monopoly
 
         }
 
+        #endregion
+
         public static Board LoadBoard()
         {
             return new Board(File.LoadBoard("board.csv"));
+        }
+
+        public Property GetProperty(Point position)
+        {
+            return board[position.X, position.Y];
         }
     }
 }
