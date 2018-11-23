@@ -10,7 +10,7 @@ namespace Monopoly
     public partial class Form1 : Form
     {
         public static Form1 instance;
-        public Player.Player[] players = new Player.Player[8];
+        public Player.Player[] players = new Player.Player[4];
         public Dictionary<Player.Player, PictureBox> playerPiece;
 
         public Board board;
