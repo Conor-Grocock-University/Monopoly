@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Monopoly.Utility;
+using Monopoly.Models;
 
 namespace Monopoly
 {
@@ -22,8 +23,8 @@ namespace Monopoly
             };
         }
 
-        private Player.Player player;
-        public void setPlayer(Player.Player player)
+        private Player player;
+        public void setPlayer(Player player)
         {
             this.player = player;
             lblPlayerName.Text = "Player " + player.PlayerNumber;
@@ -39,7 +40,6 @@ namespace Monopoly
         private void OnDiceRollComplete()
         {
             player.Move(GlobalStorage.dice[0] + GlobalStorage.dice[1]);
-            Form1.instance.MovePlayerPiece(player);
         }
 
         private void disablePanel(object sender, EventArgs e)

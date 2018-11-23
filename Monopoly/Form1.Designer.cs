@@ -34,7 +34,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 989);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(230)))), ((int)(((byte)(208)))));
+            this.ClientSize = new System.Drawing.Size(984, 990);
             this.MaximumSize = new System.Drawing.Size(1000, 1028);
             this.MinimumSize = new System.Drawing.Size(1000, 1028);
             this.Name = "Form1";

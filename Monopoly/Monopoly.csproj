@@ -86,7 +86,7 @@
     <Compile Include="Forms\PlayerView.Designer.cs">
       <DependentUpon>PlayerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Player\Player.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Property.cs" />
     <Compile Include="Utility\File.cs" />
     <Compile Include="Form1.cs">
