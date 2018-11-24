@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly.Player
+namespace Monopoly.Models
 {
     public class Player
     {
@@ -15,15 +15,13 @@ namespace Monopoly.Player
         public int PlayerNumber;
         public PlayerView PlayerForm;
         public Image PlayerImage;
-        public Point Position = new Point(0,0);
+        public int[] Position = new int[2] { 0,0 };
 
         public void Move(int spacesToMove)
         {
-            int y = Position.Y + spacesToMove + 1;
-            int x = Position.X + (y /= 10);
-            Console.WriteLine(x + ", " + y);
-            Position.Offset(x, y);
-            Console.WriteLine(Position);
+            Position[1] += spacesToMove + 1;
+            Position[0] += (Position[1] /= 10);
+            Form1.instance.MovePlayer(this, Position);
         }
     }
 }

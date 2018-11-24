@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Monopoly.Controls;
 using Monopoly.Utility;
+using Monopoly.Models;
 
 namespace Monopoly
 {
@@ -120,11 +121,12 @@ namespace Monopoly
             form.Controls.Add(propertyControl);
         }
 
-        private Point getTileLocation(int i, int j)
+        #endregion
+
+        public Point getTileLocation(int i, int j)
         {
             int x = 0;
             int y = 0;
-            int t = 0;
 
             switch (i)
             {
@@ -147,10 +149,8 @@ namespace Monopoly
             }
 
             return new Point(x - PropertySize, y - PropertySize);
-
         }
 
-        #endregion
 
         public static Board LoadBoard()
         {
