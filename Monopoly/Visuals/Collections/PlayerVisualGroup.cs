@@ -39,8 +39,6 @@ namespace Monopoly.Visuals.Collections
                 Point p = playerVisuals[i].Player.GetPositionInFormSpace();
                 playerVisuals[i].pictureBox.Location = p;
                 playerVisuals[i].pictureBox.BringToFront();
-                Debug.Print(Severity.Error, "Player visual updated");
-                Debug.Print(Severity.Error, p.ToString());
             }
         }
     }
