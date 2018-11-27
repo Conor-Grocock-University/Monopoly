@@ -34,6 +34,7 @@ namespace Monopoly.Models
                 playerPictureBox.Image = File.GetImageFromName("Players/" + Players[i].Number + ".png");
                 var position = GetTileLocation(Players[i].Position[0], Players[i].Position[1]);
                 playerPictureBox.Location = new Point(position[0], position[1]);
+                playerPictureBox.Size = new Size(40, 40);
 
                 playerVisualGroup.Set(i, new PlayerVisual(ref Players[i], ref playerPictureBox));
             }
