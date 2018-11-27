@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Monopoly
+namespace Monopoly.Models
 {
     public class Property
     {

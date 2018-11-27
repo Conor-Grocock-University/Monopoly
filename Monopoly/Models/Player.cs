@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Monopoly.Utility;
 
 namespace Monopoly.Models
 {
@@ -12,16 +13,18 @@ namespace Monopoly.Models
         private int balance = 1500;
         public Action<int> OnBalanceChanged;
 
-        public int PlayerNumber;
-        public PlayerView PlayerForm;
-        public Image PlayerImage;
+        public int Number;
         public int[] Position = new int[2] { 0,0 };
+
+        public Player(int number)
+        {
+            this.Number = number;
+        }
 
         public void Move(int spacesToMove)
         {
-            Position[1] += spacesToMove + 1;
-            Position[0] += (Position[1] /= 10);
-            Form1.instance.MovePlayer(this, Position);
+            var positionOnSide = spacesToMove + 1;
+            Position = new int[2]{ positionOnSide, (positionOnSide) %= 10 };
         }
     }
 }

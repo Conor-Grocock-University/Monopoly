@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
+using Monopoly.Models;
+
 namespace Monopoly.Utility
 {
     public class File
@@ -66,14 +68,14 @@ namespace Monopoly.Utility
             return board;
         }
 
-        public static Image getImageFromName(string fileName)
+        public static Image GetImageFromName(string fileName)
         {
             fileName = fileName.Trim().ToLower().Replace(' ', '_');
             if (System.IO.File.Exists("Resources/Images/" + fileName))
                 return Image.FromFile("Resources/Images/" + fileName);
             else
             {
-                Console.WriteLine("[Error] " + fileName + " not found");
+                Debug.Print(Severity.Error, $"{fileName} not found");
                 return Image.FromFile("Resources/Images/missing.png");
             }
         }

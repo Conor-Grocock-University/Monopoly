@@ -13,22 +13,17 @@ namespace Monopoly.Forms
 {
     public partial class DiceForm : Form
     {
-        public static DiceForm instance;
+        public static DiceForm Instance;
         public DiceForm()
         {
             InitializeComponent();
-            instance = this;
+            Instance = this;
             RollDice();
-
-            btnRoll.Enabled = false;
-            GlobalStorage.OnNextPlayerTurn += player => btnRoll.Enabled = true;
         }
 
         private void btnRoll_Click(object sender, EventArgs e)
         {
             RollDice();
-            btnRoll.Enabled = false;
-            GlobalStorage.OnDiceRollComplete();
         }
 
         private void RollDice()
@@ -37,11 +32,8 @@ namespace Monopoly.Forms
             int d1 = r.Next(1, 6);
             int d2 = r.Next(1, 6);
 
-            oDice1.Image = File.getImageFromName("Dice/" + d1.ToString() + ".png");
-            oDice2.Image = File.getImageFromName("Dice/" + d2.ToString() + ".png");
-
-            GlobalStorage.dice[0] = d1;
-            GlobalStorage.dice[1] = d2;
+            oDice1.Image = File.GetImageFromName("Dice/" + d1.ToString() + ".png");
+            oDice2.Image = File.GetImageFromName("Dice/" + d2.ToString() + ".png");
 
         }
     }
