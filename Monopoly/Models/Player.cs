@@ -23,8 +23,9 @@ namespace Monopoly.Models
 
         public void Move(int spacesToMove)
         {
-            var positionOnSide = spacesToMove + 1;
-            Position = new int[2]{ positionOnSide, (positionOnSide) %= 10 };
+            int side = (Position[0] + ((Position[1] + spacesToMove) / 10)) % 4;
+            int position = (Position[1] + spacesToMove) % 10;
+            Position = new int[2]{ side, position };
         }
     }
 }

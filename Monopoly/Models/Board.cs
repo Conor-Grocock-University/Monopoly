@@ -50,7 +50,7 @@ namespace Monopoly.Models
                 pic.BringToFront();
                 p.Move(1);
 
-                Debug.Print(Severity.Error, "Created player at " + position[0] + ", " + position[1]);
+                Debug.Print(Severity.Error, "Created player at " + p.Position[0] +","+ p.Position[1] +" meaning "+ position[0] + ", " + position[1]);
             }
         }
 
