@@ -99,7 +99,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utility\GlobalStorage.cs" />
     <Compile Include="Visuals\Collections\PlayerVisualGroup.cs" />
     <Compile Include="Visuals\PlayerVisual.cs" />
     <EmbeddedResource Include="Controls\BonusControl.resx">

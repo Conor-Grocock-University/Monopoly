@@ -43,7 +43,8 @@ namespace Monopoly.Utility
                 // [2] - Name
                 // [3] - Color
                 // [4] - Price
-                Property property = new Property(int.Parse(lineSegments[0]), lineSegments[1], lineSegments[2], propColor, int.Parse(lineSegments[4]));
+                Debug.Print(Severity.Fatal, lineSegments[2] + ": " + (lineSegments[5].Trim().ToLower() == "true").ToString());
+                Property property = new Property(int.Parse(lineSegments[0]), lineSegments[1], lineSegments[2], propColor, int.Parse(lineSegments[4]), lineSegments[5].Trim().ToLower() == "true");
                 cards[int.Parse(lineSegments[0])] = property;
             }
 

@@ -33,13 +33,15 @@
             this.lblPLayerMoney = new System.Windows.Forms.Label();
             this.oPlayerIcon = new System.Windows.Forms.PictureBox();
             this.btnEndTurn = new System.Windows.Forms.Button();
+            this.btnBuyProperty = new System.Windows.Forms.Button();
+            this.oProperties = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.oPlayerIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPlayerName
             // 
             this.lblPlayerName.AutoSize = true;
-            this.lblPlayerName.Location = new System.Drawing.Point(13, 13);
+            this.lblPlayerName.Location = new System.Drawing.Point(9, 13);
             this.lblPlayerName.Name = "lblPlayerName";
             this.lblPlayerName.Size = new System.Drawing.Size(39, 13);
             this.lblPlayerName.TabIndex = 0;
@@ -48,11 +50,11 @@
             // lblPLayerMoney
             // 
             this.lblPLayerMoney.AutoSize = true;
-            this.lblPLayerMoney.Location = new System.Drawing.Point(13, 30);
+            this.lblPLayerMoney.Location = new System.Drawing.Point(9, 35);
             this.lblPLayerMoney.Name = "lblPLayerMoney";
-            this.lblPLayerMoney.Size = new System.Drawing.Size(35, 13);
+            this.lblPLayerMoney.Size = new System.Drawing.Size(71, 13);
             this.lblPLayerMoney.TabIndex = 1;
-            this.lblPLayerMoney.Text = "label2";
+            this.lblPLayerMoney.Text = "Player Money";
             // 
             // oPlayerIcon
             // 
@@ -66,7 +68,7 @@
             // 
             // btnEndTurn
             // 
-            this.btnEndTurn.Location = new System.Drawing.Point(172, 120);
+            this.btnEndTurn.Location = new System.Drawing.Point(12, 90);
             this.btnEndTurn.Name = "btnEndTurn";
             this.btnEndTurn.Size = new System.Drawing.Size(100, 23);
             this.btnEndTurn.TabIndex = 3;
@@ -74,12 +76,32 @@
             this.btnEndTurn.UseVisualStyleBackColor = true;
             this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
             // 
+            // btnBuyProperty
+            // 
+            this.btnBuyProperty.Location = new System.Drawing.Point(12, 61);
+            this.btnBuyProperty.Name = "btnBuyProperty";
+            this.btnBuyProperty.Size = new System.Drawing.Size(100, 23);
+            this.btnBuyProperty.TabIndex = 4;
+            this.btnBuyProperty.Text = "Buy Property";
+            this.btnBuyProperty.UseVisualStyleBackColor = true;
+            this.btnBuyProperty.Click += new System.EventHandler(this.btnBuyProperty_Click);
+            // 
+            // oProperties
+            // 
+            this.oProperties.FormattingEnabled = true;
+            this.oProperties.Location = new System.Drawing.Point(13, 127);
+            this.oProperties.Name = "oProperties";
+            this.oProperties.Size = new System.Drawing.Size(159, 121);
+            this.oProperties.TabIndex = 5;
+            // 
             // PlayerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.ControlBox = false;
+            this.Controls.Add(this.oProperties);
+            this.Controls.Add(this.btnBuyProperty);
             this.Controls.Add(this.btnEndTurn);
             this.Controls.Add(this.oPlayerIcon);
             this.Controls.Add(this.lblPLayerMoney);
@@ -104,5 +126,7 @@
 
         private System.Windows.Forms.PictureBox oPlayerIcon;
         private System.Windows.Forms.Button btnEndTurn;
+        private System.Windows.Forms.Button btnBuyProperty;
+        private System.Windows.Forms.ListBox oProperties;
     }
 }

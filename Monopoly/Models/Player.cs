@@ -48,5 +48,10 @@ namespace Monopoly.Models
             this.balance -= amount;
             OnBalanceChanged?.Invoke();
         }
+
+        public bool CanAfford(Property property)
+        {
+            return (balance > property.Price);
+        }
     }
 }

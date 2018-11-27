@@ -22,7 +22,7 @@ namespace Monopoly
 
             board = Board.LoadBoard();
             board.DrawBoard(this);
-            this.playerVisualGroup = board.playerVisualGroup;
+            this.playerVisualGroup = board.PlayerVisualGroup;
 
             DiceForm diceForm = new DiceForm();
             diceForm.Show();

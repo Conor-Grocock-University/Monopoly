@@ -1,6 +1,7 @@
 ﻿using Monopoly.Forms;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,9 +22,9 @@ namespace Monopoly.Models
 
         //Start turn
         //Bring dice to front
-        public void StartTurn()
+        private void StartTurn()
         {
-            board.playerVisualGroup.Get(CurrentTurnPlayer).playerView.BringToFront();
+            board.PlayerVisualGroup.Get(CurrentTurnPlayer).playerView.BringToFront();
             DiceForm.Instance.BringToFront();
             DiceForm.Instance.PostDiceRoll = PostRoll;
             DiceForm.Instance.AllowRoll();
@@ -35,23 +36,41 @@ namespace Monopoly.Models
         //Allow purchase
         //Enable ending turn
 
-        public void PostRoll()
+        private void PostRoll()
         {
-            board.playerVisualGroup.Get(CurrentTurnPlayer).playerView.BringToFront();
-            board.playerVisualGroup.Get(CurrentTurnPlayer).Player.Move(DiceForm.Instance.dTotal);
+            board.PlayerVisualGroup.Get(CurrentTurnPlayer).playerView.BringToFront();
+            board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.Move(DiceForm.Instance.dTotal);
             board.Draw();
-            board.playerVisualGroup.Get(CurrentTurnPlayer).playerView.PlayerEndTurn = EndTurn;
-            board.playerVisualGroup.Get(CurrentTurnPlayer).playerView.AllowEndTurn();
-        }
+            
+            Point pos = new Point(board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.Position[0], board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.Position[1]);
+            if (board.GetProperty(pos).CanBuy(board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player))
+            {
+                board.PlayerVisualGroup.Get(CurrentTurnPlayer).playerView.PlayerBuyProperty = PlayerBuyProperty;
+                board.PlayerVisualGroup.Get(CurrentTurnPlayer).playerView.AllowBuyProperty();
+            }
 
+            board.PlayerVisualGroup.Get(CurrentTurnPlayer).playerView.PlayerEndTurn = EndTurn;
+            board.PlayerVisualGroup.Get(CurrentTurnPlayer).playerView.AllowEndTurn();
+        }
+        
         //End turn
         //increment turn player
         //Start again
-        public void EndTurn()
+        private void EndTurn()
         {
             CurrentTurnPlayer++;
             if (CurrentTurnPlayer > 3) CurrentTurnPlayer = 0;
             StartTurn();
+        }
+        
+        private void PlayerBuyProperty()
+        {
+            Point pos = new Point(board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.Position[0], board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.Position[1]);
+            Property property = board.GetProperty(pos);
+
+            board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.SetBalance(property.Price);
+            property.Purchase(board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player);
+            board.PlayerVisualGroup.Get(CurrentTurnPlayer).playerView.AddProperty(property);
         }
     }
 }

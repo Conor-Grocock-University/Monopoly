@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Monopoly.Models;
 
 namespace Monopoly.Visuals.Collections
 {
@@ -37,6 +38,7 @@ namespace Monopoly.Visuals.Collections
             for (int i = 0; i < playerVisuals.Length; i++)
             {
                 Point p = playerVisuals[i].Player.GetPositionInFormSpace();
+                p.Offset(Board.PropertySize / 4, Board.PropertySize / 4);
                 playerVisuals[i].pictureBox.Location = p;
                 playerVisuals[i].pictureBox.BringToFront();
             }
