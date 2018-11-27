@@ -14,27 +14,39 @@ namespace Monopoly.Forms
     public partial class DiceForm : Form
     {
         public static DiceForm Instance;
+        public Action PostDiceRoll;
         public DiceForm()
         {
             InitializeComponent();
             Instance = this;
             RollDice();
+            btnRoll.Enabled = false;
         }
 
         private void btnRoll_Click(object sender, EventArgs e)
         {
             RollDice();
+            btnRoll.Enabled = false;
         }
+
+        public int dTotal, d1, d2;
 
         private void RollDice()
         {
             Random r = new Random();
-            int d1 = r.Next(1, 6);
-            int d2 = r.Next(1, 6);
+            d1 = r.Next(1, 6);
+            d2 = r.Next(1, 6);
+            dTotal = d1 + d2;
 
             oDice1.Image = File.GetImageFromName("Dice/" + d1.ToString() + ".png");
             oDice2.Image = File.GetImageFromName("Dice/" + d2.ToString() + ".png");
 
+            PostDiceRoll?.Invoke();
+        }
+
+        public void AllowRoll()
+        {
+            btnRoll.Enabled = true;
         }
     }
 }

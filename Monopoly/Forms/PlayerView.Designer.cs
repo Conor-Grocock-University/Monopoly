@@ -72,6 +72,7 @@
             this.btnEndTurn.TabIndex = 3;
             this.btnEndTurn.Text = "End turn";
             this.btnEndTurn.UseVisualStyleBackColor = true;
+            this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
             // 
             // PlayerView
             // 

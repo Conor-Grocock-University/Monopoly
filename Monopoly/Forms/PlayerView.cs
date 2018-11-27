@@ -26,6 +26,19 @@ namespace Monopoly
             lblPlayerName.Text = "Player " + playerVisual.Player.Number;
             lblPLayerMoney.Text = "£" + playerVisual.Player.GetBalance();
             oPlayerIcon.Image = playerVisual.pictureBox.Image;
+            btnEndTurn.Enabled = false;
+        }
+
+        public Action PlayerEndTurn;
+        public void AllowEndTurn()
+        {
+            btnEndTurn.Enabled = true;
+        }
+
+        private void btnEndTurn_Click(object sender, EventArgs e)
+        {
+            btnEndTurn.Enabled = false;
+            PlayerEndTurn?.Invoke();
         }
     }
 }

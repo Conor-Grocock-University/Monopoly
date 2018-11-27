@@ -14,6 +14,7 @@ namespace Monopoly
     {
         private Board board;
         private PlayerVisualGroup playerVisualGroup;
+        private TurnKeeper turnKeeper;
 
         public Form1()
         {
@@ -27,6 +28,9 @@ namespace Monopoly
             diceForm.Show();
 
             this.playerVisualGroup.Setup(this);
+
+            turnKeeper = new TurnKeeper(board);
+
         }
 
         public void RequestRedraw()

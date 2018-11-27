@@ -18,6 +18,11 @@ namespace Monopoly.Visuals.Collections
             playerVisuals[i].playerView.Show();
         }
 
+        public PlayerVisual Get(int playerIndex)
+        {
+            return playerVisuals[playerIndex];
+        }
+
         public void Setup(Form1 form)
         {
             for (int i = 0; i < playerVisuals.Length; i++)
