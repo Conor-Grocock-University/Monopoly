@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Monopoly.Utility;
 using Monopoly.Models;
+using Monopoly.Visuals;
 
 namespace Monopoly
 {
@@ -17,6 +18,14 @@ namespace Monopoly
         public PlayerView()
         {
             InitializeComponent();
+        }
+
+        public PlayerView(PlayerVisual playerVisual)
+        {
+            InitializeComponent();
+            lblPlayerName.Text = "Player " + playerVisual.Player.Number;
+            lblPLayerMoney.Text = "£" + playerVisual.Player.GetBalance();
+            oPlayerIcon.Image = playerVisual.pictureBox.Image;
         }
     }
 }

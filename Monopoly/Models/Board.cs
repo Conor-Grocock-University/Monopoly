@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using Monopoly.Controls;
 using Monopoly.Utility;
 using Monopoly.Models;
+using Monopoly.Visuals;
+using Monopoly.Visuals.Collections;
 
 namespace Monopoly.Models
 {
@@ -14,6 +16,7 @@ namespace Monopoly.Models
         private Point StartPoint;
 
         private Player[] Players = new Player[4];
+        public PlayerVisualGroup playerVisualGroup = new PlayerVisualGroup();
 
         private Board(Property[,] board)
         {
@@ -25,39 +28,33 @@ namespace Monopoly.Models
         {
             for (int i = 0; i < Players.Length; i++)
             {
-                Players[i] = new Player(i);
+                Players[i] = new Player(i, this);
+
+                PictureBox playerPictureBox = new PictureBox();
+                playerPictureBox.Image = File.GetImageFromName("Players/" + Players[i].Number + ".png");
+                var position = GetTileLocation(Players[i].Position[0], Players[i].Position[1]);
+                playerPictureBox.Location = new Point(position[0], position[1]);
+
+                playerVisualGroup.Set(i, new PlayerVisual(ref Players[i], ref playerPictureBox));
             }
         }
 
-        public void Draw(Form form)
+        private Form1 BoardForm;
+        public void Draw()
         {
-            DrawTiles(form);
-            DrawPlayers(form);
-        }
-
-        public void DrawPlayers(Form form)
-        {
-            foreach (Player p in Players)
-            {
-                PictureBox pic = new PictureBox();
-                
-                var position = GetTileLocation(p.Position[0], p.Position[1]);
-                pic.Location = new Point(position[0], position[1]);
-
-                pic.Image = File.GetImageFromName("Players/" + p.Number + ".png");
-                form.Controls.Add(pic);
-
-                pic.BringToFront();
-                p.Move(1);
-
-                Debug.Print(Severity.Error, "Created player at " + p.Position[0] +","+ p.Position[1] +" meaning "+ position[0] + ", " + position[1]);
-            }
+            BoardForm.RequestRedraw();
         }
 
         private const int PropertySize = 90;
 
-        private void DrawTiles(Form form)
+        public void MoveRandomPlayer()
         {
+            Players[0].Move(1);
+        }
+
+        public void DrawBoard(Form1 form)
+        {
+            BoardForm = form;
             for (var i = 0; i < board.GetLength(0); i++)
             {
                 for (var j = 0; j < board.GetLength(1); j++)
@@ -189,7 +186,7 @@ namespace Monopoly.Models
 
         #endregion
 
-        private int[] GetTileLocation(int i, int j)
+        public int[] GetTileLocation(int i, int j)
         {
             int x = 0, y = 0;
 

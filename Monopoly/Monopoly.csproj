@@ -99,6 +99,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\GlobalStorage.cs" />
+    <Compile Include="Visuals\Collections\PlayerVisualGroup.cs" />
+    <Compile Include="Visuals\PlayerVisual.cs" />
     <EmbeddedResource Include="Controls\BonusControl.resx">
       <DependentUpon>BonusControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,9 +178,7 @@
     <Content Include="Resources\Images\super_tax.png" />
     <Content Include="Resources\Images\water_works.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Managers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>XCOPY "$(ProjectDir)Resources" "$(TargetDir)Resources\" /S /Y</PostBuildEvent>

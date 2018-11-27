@@ -5,26 +5,33 @@ using System.Windows.Forms;
 using Monopoly.Forms;
 using Monopoly.Utility;
 using Monopoly.Models;
+using Monopoly.Visuals;
+using Monopoly.Visuals.Collections;
 
 namespace Monopoly
 {
     public partial class Form1 : Form
     {
         private Board board;
+        private PlayerVisualGroup playerVisualGroup;
+
         public Form1()
         {
             InitializeComponent();
 
             board = Board.LoadBoard();
-            board.Draw(this);
+            board.DrawBoard(this);
+            this.playerVisualGroup = board.playerVisualGroup;
 
             DiceForm diceForm = new DiceForm();
             diceForm.Show();
+
+            this.playerVisualGroup.Setup(this);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void RequestRedraw()
         {
-            board.DrawPlayers(this);
+            playerVisualGroup.Update();
         }
     }
 }
