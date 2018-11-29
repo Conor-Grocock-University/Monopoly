@@ -48,11 +48,7 @@ namespace Monopoly.Models
         }
 
         public const int PropertySize = 90;
-
-        public void MoveRandomPlayer()
-        {
-            _players[0].Move(1);
-        }
+        
 
         public void DrawBoard(Form1 form)
         {
@@ -107,7 +103,6 @@ namespace Monopoly.Models
 
                     int[] position = GetTileLocation(i, j);
                     _board[i, j].WorldPosition = new Point(position[0], position[1]);
-                    Debug.Print(Severity.Info, _board[i, j].Name + ": " + _board[i, j].WorldPosition);
                 }
             }
         }
@@ -123,9 +118,6 @@ namespace Monopoly.Models
             cornerControl.Location = new Point(position[0], position[1]);
 
             form.Controls.Add(cornerControl);
-            if (_board[i, j].Name.Trim() == "Go")
-            {
-            }
         }
 
         private void CreateBonusTile(Form form, int i, int j)
@@ -232,6 +224,92 @@ namespace Monopoly.Models
         public Property GetProperty(Point position)
         {
             return _board[position.X, position.Y];
+        }
+
+        public Property GetProperty(string needle)
+        {
+            for (int i = 0; i < _board.GetLength(0); i++)
+            {
+                for (int j = 0; j < _board.GetLength(0); j++)
+                {
+                    if (_board[i, j].Name == needle || _board[i, j].Type == needle)
+                    {
+                        return _board[i, j];
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public bool GetPropertySetOwnedBySinglePlayer(Color setColor)
+        {
+            Player setOwner = null;
+            int owned = 0;
+            int setCount = 0;
+            for (int i = 0; i < _board.GetLength(0); i++)
+            {
+                for (int j = 0; j < _board.GetLength(0); j++)
+                {
+                    if (_board[i, j].Color == setColor)
+                    {
+                        if (setOwner == null)
+                        {
+                            setOwner = _board[i, j].Owner;
+                            owned = 0;
+                        }
+                        else if (setOwner == _board[i, j].Owner)
+                        {
+                            owned++;
+                        }
+
+                        setCount++;
+
+                    }
+                }
+            }
+
+            return owned == setCount;
+        }
+
+        public int GetRentStage(Property getProperty)
+        {
+            return GetPropertySetOwnedBySinglePlayer(getProperty.Color) ? getProperty.propertyStage : 0;
+        }
+
+        public int StationsOwned()
+        {
+            int owned = 0;
+            for (int i = 0; i < _board.GetLength(0); i++)
+            {
+                for (int j = 0; j < _board.GetLength(0); j++)
+                {
+                    if (_board[i, j].Type == "Station" && _board[i, j].Owner != null)
+                    {
+                        owned++;
+                    }
+                }
+            }
+
+            return owned;
+        }
+
+        public int UtilitysOwned()
+        {
+
+            int owned = 0;
+            for (int i = 0; i < _board.GetLength(0); i++)
+            {
+                for (int j = 0; j < _board.GetLength(0); j++)
+                {
+                    if (_board[i, j].Type == "Utility" && _board[i, j].Owner != null)
+                    {
+                        owned++;
+                    }
+                }
+            }
+
+            return owned;
         }
     }
 }

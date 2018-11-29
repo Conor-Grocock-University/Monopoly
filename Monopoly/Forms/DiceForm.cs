@@ -36,6 +36,8 @@ namespace Monopoly.Forms
             Random r = new Random();
             d1 = r.Next(1, 6);
             d2 = r.Next(1, 6);
+            //d1 = 30;
+            //d2 = 0;
             dTotal = d1 + d2;
 
             oDice1.Image = File.GetImageFromName("Dice/" + d1.ToString() + ".png");

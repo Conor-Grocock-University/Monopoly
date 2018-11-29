@@ -39,10 +39,18 @@ namespace Monopoly.Models
         private void PostRoll()
         {
             board.PlayerVisualGroup.Get(CurrentTurnPlayer).playerView.BringToFront();
+            int oldPlayerSide = board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.Position[0];
             board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.Move(DiceForm.Instance.dTotal);
+            int newPlayerSide = board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.Position[0];
             board.Draw();
-            
+
+            if(newPlayerSide == 0 && oldPlayerSide != 0) board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.SetBalance(-200);
+
             Point pos = new Point(board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.Position[0], board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player.Position[1]);
+
+
+            board.GetProperty(pos).LandAction(board, board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player);
+
             if (board.GetProperty(pos).CanBuy(board.PlayerVisualGroup.Get(CurrentTurnPlayer).Player))
             {
                 board.PlayerVisualGroup.Get(CurrentTurnPlayer).playerView.PlayerBuyProperty = PlayerBuyProperty;
@@ -61,6 +69,7 @@ namespace Monopoly.Models
             CurrentTurnPlayer++;
             if (CurrentTurnPlayer > 3) CurrentTurnPlayer = 0;
             StartTurn();
+            board.Draw();
         }
         
         private void PlayerBuyProperty()

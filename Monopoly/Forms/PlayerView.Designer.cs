@@ -1,4 +1,4 @@
-﻿namespace Monopoly
+﻿namespace Monopoly.Forms
 {
     partial class PlayerView
     {
@@ -35,6 +35,7 @@
             this.btnEndTurn = new System.Windows.Forms.Button();
             this.btnBuyProperty = new System.Windows.Forms.Button();
             this.oProperties = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.oPlayerIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,10 +90,19 @@
             // oProperties
             // 
             this.oProperties.FormattingEnabled = true;
-            this.oProperties.Location = new System.Drawing.Point(13, 127);
+            this.oProperties.Location = new System.Drawing.Point(13, 140);
             this.oProperties.Name = "oProperties";
-            this.oProperties.Size = new System.Drawing.Size(159, 121);
+            this.oProperties.Size = new System.Drawing.Size(159, 108);
             this.oProperties.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Properties";
             // 
             // PlayerView
             // 
@@ -100,6 +110,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.ControlBox = false;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.oProperties);
             this.Controls.Add(this.btnBuyProperty);
             this.Controls.Add(this.btnEndTurn);
@@ -128,5 +139,6 @@
         private System.Windows.Forms.Button btnEndTurn;
         private System.Windows.Forms.Button btnBuyProperty;
         private System.Windows.Forms.ListBox oProperties;
+        private System.Windows.Forms.Label label1;
     }
 }

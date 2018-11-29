@@ -53,5 +53,11 @@ namespace Monopoly.Models
         {
             return (balance > property.Price);
         }
+
+        public void GoToJail(Board board)
+        {
+            Point newPos = board.GetProperty("Jail").WorldPosition;
+            Position = new int[2]{newPos.X, newPos.Y};
+        }
     }
 }

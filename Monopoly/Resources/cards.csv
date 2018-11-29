@@ -1,36 +1,36 @@
-0,Corner,Go,255.0.0,200,FALSE
-1,Corner,Jail,255.0.0,100,FALSE
-2,Corner,Free Parking,255.0.0,100,FALSE
-3,Corner,Go To Jail,255.0.0,100,FALSE
-4,Chance,Chance,255.0.0,0,FALSE
-5,Community Chest,Community Chest,255.0.0,0,FALSE
-6,Tax,Income tax,255.0.0,200,FALSE
-7,Tax,Super tax,255.0.0,100,FALSE
-8,Station,Kings cross,255.0.0,200,TRUE
-9,Station,Marylebone,255.0.0,200,TRUE
-10,Station,Fenchurch st.,255.0.0,200,TRUE
-11,Station,Liverpool St.,255.0.0,200,TRUE
-12,Utility,Electric Company,255.0.0,150,TRUE
-13,Utility,Water Works,255.0.0,150,TRUE
-14,Property,Old kent road,120.77.60,60,TRUE
-15,Property,Whitechapel,120.77.60,60,TRUE
-16,Property,The angel Islington,186.219.238,200,TRUE
-17,Property,Euston Road,186.219.238,100,TRUE
-18,Property,Pentonville,186.219.238,100,TRUE
-19,Property,Pall Mall,170.59.128,140,TRUE
-20,Property,Whitehall,170.59.128,140,TRUE
-21,Property,Northumberland Avenue,170.59.128,160,TRUE
-22,Property,Bow Street,213.138.55,180,TRUE
-23,Property,Marlborough Street,213.138.55,180,TRUE
-24,Property,Vine Street,213.138.55,200,TRUE
-25,Property,The Strand,189.39.47,220,TRUE
-26,Property,Fleet Street,189.39.47,220,TRUE
-27,Property,Trafalgar Square,189.39.47,240,TRUE
-28,Property,Leicester Square,255.241.57,260,TRUE
-29,Property,Coventry Street,255.241.57,260,TRUE
-30,Property,Piccadilly,255.241.57,280,TRUE
-31,Property,Regent Street,95.165.93,300,TRUE
-32,Property,Oxford Street,95.165.93,300,TRUE
-33,Property,Bond Street,95.165.93,320,TRUE
-34,Property,Park Lane,44.103.161,350,TRUE
-35,Property,Mayfair,44.103.161,400,TRUE
+0,Corner,Go,255.0.0,200,FALSE,0
+1,Corner,Jail,255.0.0,100,FALSE,0
+2,Corner,Free Parking,255.0.0,100,FALSE,0
+3,Corner,Go To Jail,255.0.0,100,FALSE,0
+4,Chance,Chance,255.0.0,0,FALSE,0
+5,Community Chest,Community Chest,255.0.0,0,FALSE,0
+6,Tax,Income tax,255.0.0,200,FALSE,0
+7,Tax,Super tax,255.0.0,100,FALSE,0
+8,Station,Kings cross,255.0.0,200,TRUE,0
+9,Station,Marylebone,255.0.0,200,TRUE,0
+10,Station,Fenchurch st.,255.0.0,200,TRUE,0
+11,Station,Liverpool St.,255.0.0,200,TRUE,0
+12,Utility,Electric Company,255.0.0,150,TRUE,0
+13,Utility,Water Works,255.0.0,150,TRUE,0
+14,Property,Old kent road,120.77.60,60,TRUE,2
+15,Property,Whitechapel,120.77.60,60,TRUE,4
+16,Property,The angel Islington,186.219.238,200,TRUE,6
+17,Property,Euston Road,186.219.238,100,TRUE,6
+18,Property,Pentonville,186.219.238,100,TRUE,8
+19,Property,Pall Mall,170.59.128,140,TRUE,10
+20,Property,Whitehall,170.59.128,140,TRUE,10
+21,Property,Northumberland Avenue,170.59.128,160,TRUE,12
+22,Property,Bow Street,213.138.55,180,TRUE,14
+23,Property,Marlborough Street,213.138.55,180,TRUE,14
+24,Property,Vine Street,213.138.55,200,TRUE,14
+25,Property,The Strand,189.39.47,220,TRUE,16
+26,Property,Fleet Street,189.39.47,220,TRUE,18
+27,Property,Trafalgar Square,189.39.47,240,TRUE,20
+28,Property,Leicester Square,255.241.57,260,TRUE,22
+29,Property,Coventry Street,255.241.57,260,TRUE,22
+30,Property,Piccadilly,255.241.57,280,TRUE,22
+31,Property,Regent Street,95.165.93,300,TRUE,26
+32,Property,Oxford Street,95.165.93,300,TRUE,26
+33,Property,Bond Street,95.165.93,320,TRUE,28
+34,Property,Park Lane,44.103.161,350,TRUE,35
+35,Property,Mayfair,44.103.161,400,TRUE,50

@@ -43,8 +43,7 @@ namespace Monopoly.Utility
                 // [2] - Name
                 // [3] - Color
                 // [4] - Price
-                Debug.Print(Severity.Fatal, lineSegments[2] + ": " + (lineSegments[5].Trim().ToLower() == "true").ToString());
-                Property property = new Property(int.Parse(lineSegments[0]), lineSegments[1], lineSegments[2], propColor, int.Parse(lineSegments[4]), lineSegments[5].Trim().ToLower() == "true");
+                Property property = new Property(int.Parse(lineSegments[0]), lineSegments[1], lineSegments[2], propColor, int.Parse(lineSegments[4]), lineSegments[5].Trim().ToLower() == "true", int.Parse(lineSegments[6]));
                 cards[int.Parse(lineSegments[0])] = property;
             }
 
@@ -55,6 +54,7 @@ namespace Monopoly.Utility
         {
             string[] fileLines = GetLines(filePath);
             Dictionary<int, Property> cards = LoadCard("cards.csv");
+
             Property[,] board = new Property[4, 10];
             
             foreach (string line in fileLines)

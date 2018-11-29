@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Monopoly.Utility;
 using Monopoly.Models;
 using Monopoly.Visuals;
 
-namespace Monopoly
+namespace Monopoly.Forms
 {
     public partial class PlayerView : Form
     {
@@ -68,7 +60,7 @@ namespace Monopoly
 
         public void AddProperty(Property property)
         {
-            oProperties.Items.Add("[ " + property.Type + " ] " + property.Name + ": " + property.Price);
+            oProperties.Items.Add(property.Name + ": " + property.Price);
         }
     }
 }
